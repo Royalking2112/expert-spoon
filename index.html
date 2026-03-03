@@ -8,7 +8,7 @@
     <style>
         :root {
             --primary: #2563eb;
-            --dark: #1e293b;
+            --dark: #0f172a;
             --light: #f8fafc;
             --text: #334155;
             --accent: #64748b;
@@ -18,7 +18,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         body {
@@ -29,7 +29,7 @@
         }
 
         nav {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
@@ -37,14 +37,15 @@
             position: fixed;
             width: 100%;
             top: 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             z-index: 1000;
         }
 
         nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.25rem;
+            font-weight: 800;
             color: var(--primary);
+            letter-spacing: -1px;
         }
 
         nav ul {
@@ -59,7 +60,8 @@
         nav ul li a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.9rem;
             transition: 0.3s;
         }
 
@@ -68,7 +70,7 @@
         }
 
         section {
-            padding: 100px 10% 60px;
+            padding: 100px 10% 80px;
         }
 
         .container {
@@ -77,149 +79,175 @@
         }
 
         h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-size: 2rem;
+            margin-bottom: 3rem;
             text-align: center;
             color: var(--dark);
         }
 
-        h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background: var(--primary);
-            margin: 10px auto;
-        }
-
+        /* About Section */
         #about {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            padding-top: 180px;
             gap: 4rem;
-            padding-top: 150px;
+        }
+
+        .hero-text {
+            flex: 1;
         }
 
         .hero-text h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--dark);
-            margin-bottom: 1rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
         }
 
         .hero-text p {
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             color: var(--accent);
-            text-align: justify;
         }
 
-        .profile-img {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 8px solid white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        .profile-placeholder {
+            width: 350px;
+            height: 350px;
+            background: #e2e8f0;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-weight: 600;
+            border: 2px dashed #cbd5e1;
         }
 
+        /* Skills */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-            text-align: center;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
 
-        .skill-card {
+        .skill-category {
             background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
-        .skill-card i {
-            font-size: 2rem;
+        .skill-category h3 {
+            margin-bottom: 1rem;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
 
-        .timeline {
-            border-left: 3px solid var(--primary);
-            margin-left: 20px;
-            padding-left: 30px;
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
-        .exp-item {
-            margin-bottom: 2.5rem;
-            position: relative;
+        .skill-tag {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
 
-        .exp-item::before {
-            content: '';
-            width: 15px;
-            height: 15px;
-            background: var(--primary);
-            border-radius: 50%;
-            position: absolute;
-            left: -39px;
-            top: 5px;
+        /* Experience/Education */
+        .edu-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
         }
 
+        /* Projects */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
         .project-card {
             background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: 0.3s;
+            border: 1px solid #f1f5f9;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
         }
 
         .project-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
         }
 
         .project-card ul {
-            padding-left: 1.2rem;
-            font-size: 0.95rem;
+            list-style: none;
+            font-size: 0.9rem;
         }
 
+        .project-card ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .project-card ul li::before {
+            content: '•';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Contact */
         #contact {
             background: var(--dark);
             color: white;
             text-align: center;
+            border-radius: 30px 30px 0 0;
         }
 
         #contact h2 { color: white; }
 
-        .contact-info {
-            margin: 2rem 0;
-            font-size: 1.2rem;
+        .contact-box {
+            margin-top: 2rem;
         }
 
-        .contact-info p { margin: 10px 0; }
-
-        .social-links a {
-            color: white;
-            font-size: 2rem;
-            margin: 0 15px;
+        .contact-item {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 1rem 0;
             transition: 0.3s;
         }
 
+        .contact-item:hover { color: white; }
+
         @media (max-width: 768px) {
+            #about { flex-direction: column-reverse; padding-top: 120px; text-align: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .profile-placeholder { width: 100%; height: 250px; }
             nav ul { display: none; }
-            #about { flex-direction: column-reverse; text-align: center; padding-top: 100px; }
-            .hero-text h1 { font-size: 2.2rem; }
-            .profile-img { width: 200px; height: 200px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">PI.</div>
+        <div class="logo">PRATHMESH.I</div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -230,37 +258,47 @@
     </nav>
 
     <section id="about">
-        <div class="container">
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
-                <div class="hero-text" style="flex: 1; min-width: 300px;">
-                    [cite_start]<h1>Prathmesh Sharanappa Ingale [cite: 1]</h1>
-                    [cite_start]<p>[cite: 4, 5, 6, 7] To land a challenging job in a reputable company where I can use my knowledge of computer engineering, problem-solving, and software development to help the business succeed. With a solid background in programming, systems design, and project planning, I look forward to working with creative teams and contributing my skills to complex solutions. My focus is on delivering robust and innovative solutions on time by combining technical expertise and enthusiasm to promote engineering excellence and surpass project goals.</p>
-                    [cite_start]<p><strong>Languages:</strong> Moderate in English, Advance in Marathi, Medium in Hindi. [cite: 8]</p>
-                </div>
-                <img src="https://via.placeholder.com/300" alt="Prathmesh Ingale" class="profile-img">
+        <div class="container" style="display: flex; align-items: center; gap: 4rem; flex-wrap: wrap;">
+            <div class="hero-text">
+                <h1>Prathmesh Sharanappa Ingale</h1>
+                <p>To land a challenging job in a reputable company where I can use my knowledge of computer engineering, problem-solving, and software development to help the business succeed. With a solid background in programming, systems design, and project planning, I look forward to working with creative teams and contributing my skills to complex solutions.</p>
+                <p>My focus is on delivering robust and innovative solutions on time by combining technical expertise and enthusiasm to promote engineering excellence and surpass project goals.</p>
+            </div>
+            <div class="profile-placeholder"><img src="https://your-image-hosting-site.com/path/to/your/photo.jpg" alt="Prathmesh Ingale"></div>
+                
             </div>
         </div>
     </section>
 
     <section id="skills">
         <div class="container">
-            [cite_start]<h2>Technical Skills [cite: 28]</h2>
+            <h2>Technical Stack</h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    [cite_start]<h3>Languages [cite: 29]</h3>
-                    <p>Python, C, C++, Java, JavaScript, MS Excel</p>
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">MS Excel</span>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    [cite_start]<h3>Databases [cite: 31]</h3>
-                    <p>MySQL</p>
+                <div class="skill-category">
+                    <h3>Databases & Scripts</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">XAMPP</span>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <i class="fas fa-certificate"></i>
-                    [cite_start]<h3>Certifications [cite: 12]</h3>
-                    [cite_start]<p>Website Development [cite: 13]</p>
-                    [cite_start]<p>AI for Students [cite: 14]</p>
+                <div class="skill-category">
+                    <h3>Certifications</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Website Development</span>
+                        <span class="skill-tag">AI for Students: Generative Models</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -268,38 +306,39 @@
 
     <section id="experience">
         <div class="container">
-            [cite_start]<h2>Education [cite: 9]</h2>
-            <div class="timeline">
-                <div class="exp-item">
-                    [cite_start]<h3>SPM Polytechnic Kumathe, Solapur [cite: 11]</h3>
-                    [cite_start]<p>Diploma in Computer Science and Engineering [cite: 10]</p>
-                    [cite_start]<p>(NBA Accredit) [cite: 11]</p>
-                </div>
+            <h2>Education</h2>
+            <div class="edu-card">
+                <h3>SPM Polytechnic Kumathe, Solapur</h3>
+                <p style="color: var(--primary); font-weight: 600;">Diploma in Computer Science and Engineering</p>
+                <p style="font-size: 0.9rem; color: var(--accent);">(NBA Accredit)</p>
             </div>
         </div>
     </section>
 
     <section id="projects">
         <div class="container">
-            [cite_start]<h2>Projects [cite: 15]</h2>
+            <h2>Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    [cite_start]<h3>Swizo (Food Delivery Website) [cite: 18]</h3>
-                    [cite_start]<p><strong>Tech:</strong> HTML, CSS, Bootstrap, MySQL, PHP (XAMPP) [cite: 25, 26]</p>
+                    <h3>Swizo (Food Delivery Website)</h3>
+                    <p style="font-size: 0.8rem; font-weight: 700; color: var(--accent); margin-bottom: 10px;">HTML • CSS • BOOTSTRAP • PHP • MYSQL</p>
                     <ul>
-                        [cite_start]<li>Search, filter, and browse restaurants by cuisines, ratings or offers [cite: 19]</li>
-                        [cite_start]<li>Live order tracking and status updates [cite: 21]</li>
-                        [cite_start]<li>Secure login/signup and user authentication system [cite: 23]</li>
-                        [cite_start]<li>Admin dashboard for managing users, orders, and promos [cite: 27]</li>
+                        <li>Search, filter, and browse restaurants by cuisines, ratings or offers.</li>
+                        <li>Live order tracking and status updates.</li>
+                        <li>Customer reviews and detailed menu pages.</li>
+                        <li>Secure login/signup and user authentication system.</li>
+                        <li>Admin, delivery partner, and customer panels.</li>
                     </ul>
                 </div>
                 <div class="project-card">
-                    [cite_start]<h3>PicShop [cite: 16]</h3>
-                    [cite_start]<p>Photo editor developed using Python. [cite: 16]</p>
+                    <h3>PicShop</h3>
+                    <p style="font-size: 0.8rem; font-weight: 700; color: var(--accent); margin-bottom: 10px;">PYTHON</p>
+                    <p>A functional photo editor application built using Python.</p>
                 </div>
                 <div class="project-card">
-                    [cite_start]<h3>Calculator [cite: 17]</h3>
-                    [cite_start]<p>Built using Python and HTML. [cite: 17]</p>
+                    <h3>Smart Calculator</h3>
+                    <p style="font-size: 0.8rem; font-weight: 700; color: var(--accent); margin-bottom: 10px;">PYTHON • HTML</p>
+                    <p>Efficient calculation tool developed with Python and web technologies.</p>
                 </div>
             </div>
         </div>
@@ -307,16 +346,15 @@
 
     <section id="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-info">
-                [cite_start]<p><i class="fas fa-phone"></i> +91 8669686708 [cite: 2]</p>
-                [cite_start]<p><i class="fas fa-envelope"></i> premingale2112@gmail.com [cite: 3]</p>
+            <h2>Let's Connect</h2>
+            <div class="contact-box">
+                <a href="tel:+918669686708" class="contact-item">+91 8669686708</a>
+                <a href="mailto:premingale2112@gmail.com" class="contact-item">premingale2112@gmail.com</a>
             </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
+            <div style="margin-top: 3rem; color: #475569; font-size: 0.8rem;">
+                <p>Languages: English (Moderate), Marathi (Advance), Hindi (Medium)</p>
+                <p style="margin-top: 1rem;">&copy; 2026 Prathmesh Sharanappa Ingale</p>
             </div>
-            <p style="margin-top: 2rem;">&copy; 2026 Prathmesh Sharanappa Ingale. [cite_start]All rights reserved. [cite: 1]</p>
         </div>
     </section>
 
