@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio</title>
+    <title>Prathmesh Sharanappa Ingale - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -25,9 +25,9 @@
             background-color: var(--light);
             color: var(--text);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        /* Navigation */
         nav {
             background: white;
             padding: 1rem 5%;
@@ -67,10 +67,8 @@
             color: var(--primary);
         }
 
-        /* Sections */
         section {
             padding: 100px 10% 60px;
-            min-height: auto;
         }
 
         .container {
@@ -83,7 +81,6 @@
             margin-bottom: 2rem;
             text-align: center;
             color: var(--dark);
-            position: relative;
         }
 
         h2::after {
@@ -95,7 +92,6 @@
             margin: 10px auto;
         }
 
-        /* About / Hero */
         #about {
             display: flex;
             align-items: center;
@@ -104,52 +100,47 @@
         }
 
         .hero-text h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: var(--dark);
+            margin-bottom: 1rem;
         }
 
         .hero-text p {
-            font-size: 1.2rem;
-            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
             color: var(--accent);
+            text-align: justify;
         }
 
         .profile-img {
-            width: 300px;
-            height: 300px;
+            width: 280px;
+            height: 280px;
             border-radius: 50%;
             object-fit: cover;
             border: 8px solid white;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* Skills */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 1.5rem;
             text-align: center;
         }
 
         .skill-card {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
         }
 
         .skill-card i {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
-        /* Experience */
         .timeline {
             border-left: 3px solid var(--primary);
             margin-left: 20px;
@@ -172,12 +163,6 @@
             top: 5px;
         }
 
-        .exp-date {
-            font-weight: bold;
-            color: var(--primary);
-        }
-
-        /* Projects */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -187,33 +172,20 @@
         .project-card {
             background: white;
             border-radius: 12px;
-            overflow: hidden;
+            padding: 1.5rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .project-img {
-            width: 100%;
-            height: 200px;
-            background: #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-style: italic;
-            color: #94a3b8;
-        }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-links a {
-            margin-right: 15px;
+        .project-card h3 {
             color: var(--primary);
-            text-decoration: none;
-            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
 
-        /* Contact */
+        .project-card ul {
+            padding-left: 1.2rem;
+            font-size: 0.95rem;
+        }
+
         #contact {
             background: var(--dark);
             color: white;
@@ -222,9 +194,12 @@
 
         #contact h2 { color: white; }
 
-        .social-links {
+        .contact-info {
             margin: 2rem 0;
+            font-size: 1.2rem;
         }
+
+        .contact-info p { margin: 10px 0; }
 
         .social-links a {
             color: white;
@@ -233,15 +208,10 @@
             transition: 0.3s;
         }
 
-        .social-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Mobile Responsive */
         @media (max-width: 768px) {
             nav ul { display: none; }
-            #about { flex-direction: column-reverse; text-align: center; }
-            .hero-text h1 { font-size: 2.5rem; }
+            #about { flex-direction: column-reverse; text-align: center; padding-top: 100px; }
+            .hero-text h1 { font-size: 2.2rem; }
             .profile-img { width: 200px; height: 200px; }
         }
     </style>
@@ -249,11 +219,11 @@
 <body>
 
     <nav>
-        <div class="logo">Portfolio.</div>
+        <div class="logo">PI.</div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
+            <li><a href="#experience">Education</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -261,36 +231,36 @@
 
     <section id="about">
         <div class="container">
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-                <div class="hero-text">
-                    <h1>Hi, I'm [Your Name]</h1>
-                    <p>Professional [Your Job Title] specializing in building modern digital experiences.</p>
-                    <a href="mailto:email@example.com" style="background: var(--primary); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px;">Hire Me</a>
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+                <div class="hero-text" style="flex: 1; min-width: 300px;">
+                    [cite_start]<h1>Prathmesh Sharanappa Ingale [cite: 1]</h1>
+                    [cite_start]<p>[cite: 4, 5, 6, 7] To land a challenging job in a reputable company where I can use my knowledge of computer engineering, problem-solving, and software development to help the business succeed. With a solid background in programming, systems design, and project planning, I look forward to working with creative teams and contributing my skills to complex solutions. My focus is on delivering robust and innovative solutions on time by combining technical expertise and enthusiasm to promote engineering excellence and surpass project goals.</p>
+                    [cite_start]<p><strong>Languages:</strong> Moderate in English, Advance in Marathi, Medium in Hindi. [cite: 8]</p>
                 </div>
-                <img src="https://via.placeholder.com/300" alt="Profile" class="profile-img">
+                <img src="https://via.placeholder.com/300" alt="Prathmesh Ingale" class="profile-img">
             </div>
         </div>
     </section>
 
     <section id="skills">
         <div class="container">
-            <h2>My Skills</h2>
+            [cite_start]<h2>Technical Skills [cite: 28]</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <p>HTML/CSS</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-js"></i>
-                    <p>JavaScript</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-react"></i>
-                    <p>React/Vue</p>
+                    <i class="fas fa-code"></i>
+                    [cite_start]<h3>Languages [cite: 29]</h3>
+                    <p>Python, C, C++, Java, JavaScript, MS Excel</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-database"></i>
-                    <p>SQL/NoSQL</p>
+                    [cite_start]<h3>Databases [cite: 31]</h3>
+                    <p>MySQL</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-certificate"></i>
+                    [cite_start]<h3>Certifications [cite: 12]</h3>
+                    [cite_start]<p>Website Development [cite: 13]</p>
+                    [cite_start]<p>AI for Students [cite: 14]</p>
                 </div>
             </div>
         </div>
@@ -298,17 +268,12 @@
 
     <section id="experience">
         <div class="container">
-            <h2>Experience</h2>
+            [cite_start]<h2>Education [cite: 9]</h2>
             <div class="timeline">
                 <div class="exp-item">
-                    <p class="exp-date">2022 - Present</p>
-                    <h3>Senior Developer @ Tech Corp</h3>
-                    <p>Led development on multiple high-traffic web applications using modern frameworks. Managed a team of 5 junior developers.</p>
-                </div>
-                <div class="exp-item">
-                    <p class="exp-date">2020 - 2022</p>
-                    <h3>Web Developer @ Creative Studio</h3>
-                    <p>Translated design mockups into responsive HTML/CSS/JS. Improved site performance metrics by 40%.</p>
+                    [cite_start]<h3>SPM Polytechnic Kumathe, Solapur [cite: 11]</h3>
+                    [cite_start]<p>Diploma in Computer Science and Engineering [cite: 10]</p>
+                    [cite_start]<p>(NBA Accredit) [cite: 11]</p>
                 </div>
             </div>
         </div>
@@ -316,29 +281,25 @@
 
     <section id="projects">
         <div class="container">
-            <h2>Featured Projects</h2>
+            [cite_start]<h2>Projects [cite: 15]</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <div class="project-img">Project Preview Photo</div>
-                    <div class="project-info">
-                        <h3>Project One Title</h3>
-                        <p>A brief description of the tech stack and the problem this project solved.</p>
-                        <div class="project-links">
-                            <a href="#">Live Demo</a>
-                            <a href="#">GitHub</a>
-                        </div>
-                    </div>
+                    [cite_start]<h3>Swizo (Food Delivery Website) [cite: 18]</h3>
+                    [cite_start]<p><strong>Tech:</strong> HTML, CSS, Bootstrap, MySQL, PHP (XAMPP) [cite: 25, 26]</p>
+                    <ul>
+                        [cite_start]<li>Search, filter, and browse restaurants by cuisines, ratings or offers [cite: 19]</li>
+                        [cite_start]<li>Live order tracking and status updates [cite: 21]</li>
+                        [cite_start]<li>Secure login/signup and user authentication system [cite: 23]</li>
+                        [cite_start]<li>Admin dashboard for managing users, orders, and promos [cite: 27]</li>
+                    </ul>
                 </div>
                 <div class="project-card">
-                    <div class="project-img">Project Preview Photo</div>
-                    <div class="project-info">
-                        <h3>Project Two Title</h3>
-                        <p>A brief description of the tech stack and the problem this project solved.</p>
-                        <div class="project-links">
-                            <a href="#">Live Demo</a>
-                            <a href="#">GitHub</a>
-                        </div>
-                    </div>
+                    [cite_start]<h3>PicShop [cite: 16]</h3>
+                    [cite_start]<p>Photo editor developed using Python. [cite: 16]</p>
+                </div>
+                <div class="project-card">
+                    [cite_start]<h3>Calculator [cite: 17]</h3>
+                    [cite_start]<p>Built using Python and HTML. [cite: 17]</p>
                 </div>
             </div>
         </div>
@@ -347,13 +308,15 @@
     <section id="contact">
         <div class="container">
             <h2>Get In Touch</h2>
-            <p>I'm currently looking for new opportunities. My inbox is always open!</p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+            <div class="contact-info">
+                [cite_start]<p><i class="fas fa-phone"></i> +91 8669686708 [cite: 2]</p>
+                [cite_start]<p><i class="fas fa-envelope"></i> premingale2112@gmail.com [cite: 3]</p>
             </div>
-            <p>&copy; 2026 [Your Name]. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p style="margin-top: 2rem;">&copy; 2026 Prathmesh Sharanappa Ingale. [cite_start]All rights reserved. [cite: 1]</p>
         </div>
     </section>
 
