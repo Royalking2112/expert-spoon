@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --text: #334155;
+            --accent: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 10% 60px;
+            min-height: auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--dark);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto;
+        }
+
+        /* About / Hero */
+        #about {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            padding-top: 150px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: var(--dark);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin: 1.5rem 0;
+            color: var(--accent);
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Experience */
+        .timeline {
+            border-left: 3px solid var(--primary);
+            margin-left: 20px;
+            padding-left: 30px;
+        }
+
+        .exp-item {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .exp-item::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+            left: -39px;
+            top: 5px;
+        }
+
+        .exp-date {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #94a3b8;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-links a {
+            margin-right: 15px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Contact */
+        #contact {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+
+        #contact h2 { color: white; }
+
+        .social-links {
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 2rem;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            #about { flex-direction: column-reverse; text-align: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .profile-img { width: 200px; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Portfolio.</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <div class="hero-text">
+                    <h1>Hi, I'm [Your Name]</h1>
+                    <p>Professional [Your Job Title] specializing in building modern digital experiences.</p>
+                    <a href="mailto:email@example.com" style="background: var(--primary); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px;">Hire Me</a>
+                </div>
+                <img src="https://via.placeholder.com/300" alt="Profile" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <p>HTML/CSS</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-js"></i>
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-react"></i>
+                    <p>React/Vue</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <p>SQL/NoSQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="exp-item">
+                    <p class="exp-date">2022 - Present</p>
+                    <h3>Senior Developer @ Tech Corp</h3>
+                    <p>Led development on multiple high-traffic web applications using modern frameworks. Managed a team of 5 junior developers.</p>
+                </div>
+                <div class="exp-item">
+                    <p class="exp-date">2020 - 2022</p>
+                    <h3>Web Developer @ Creative Studio</h3>
+                    <p>Translated design mockups into responsive HTML/CSS/JS. Improved site performance metrics by 40%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-img">Project Preview Photo</div>
+                    <div class="project-info">
+                        <h3>Project One Title</h3>
+                        <p>A brief description of the tech stack and the problem this project solved.</p>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Project Preview Photo</div>
+                    <div class="project-info">
+                        <h3>Project Two Title</h3>
+                        <p>A brief description of the tech stack and the problem this project solved.</p>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>I'm currently looking for new opportunities. My inbox is always open!</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2026 [Your Name]. All rights reserved.</p>
+        </div>
+    </section>
+
+</body>
+</html>
